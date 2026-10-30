@@ -1,0 +1,17 @@
+﻿using Nine.Identity.Domain.Contracts.Users.ValueObjects;
+using Nine.Profiles.Domain.Contracts.Profiles.ValueObjects;
+using Nine.Shared.Domain.Abstractions.Events;
+using Nine.Shared.Domain.Abstractions.ValueObjects;
+
+namespace Nine.Profiles.Domain.Contracts.Profiles.Events;
+
+public sealed record ProfileCreatedDomainEventV1(
+    DomainEventId Id,
+    ProfileId ProfileId,
+    ProfileName Name,
+    ProfileHandle Handle,
+    ProfileAvatar? Avatar,
+    ProfileBio Bio,
+    UserId OwnerId,
+    DateTime Timestamp
+) : IDomainEvent;
