@@ -5,5 +5,6 @@ public record CreateProfileRequestV1(
     string Handle,
     string? AvatarObjectKey,
     string? AvatarMediaType,
-    string Bio
+    string Bio,
+    string OwnerId
 );

@@ -10,8 +10,4 @@
       <ProjectReference Include="..\Nine.Shared.Domain\Nine.Shared.Domain.csproj" />
     </ItemGroup>
 
-    <ItemGroup>
-      <Folder Include="Common\" />
-    </ItemGroup>
-
 </Project>
