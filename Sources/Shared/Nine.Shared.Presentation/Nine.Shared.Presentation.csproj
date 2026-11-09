@@ -5,7 +5,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <PackageReference Include="Asp.Versioning.Mvc" Version="10.2.1"/>
+        <PackageReference Include="Asp.Versioning.Mvc"/>
     </ItemGroup>
 
     <ItemGroup>
