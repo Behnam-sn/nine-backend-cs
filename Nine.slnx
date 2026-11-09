@@ -1,0 +1,41 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Folder Name="/Solution Items/">
+    <File Path=".editorconfig" />
+    <File Path="Directory.Build.props" />
+    <File Path="Directory.Packages.props" />
+    <File Path="global.json" />
+    <File Path="NuGet.config" />
+  </Folder>
+  <Folder Name="/Sources/" />
+  <Folder Name="/Sources/Hosts/">
+    <Project Path="Sources/Hosts/Nine.WebApi.Tests/Nine.WebApi.Tests.csproj" />
+    <Project Path="Sources/Hosts/Nine.WebApi/Nine.WebApi.csproj" />
+  </Folder>
+  <Folder Name="/Sources/Identity/">
+    <Project Path="Sources/Identity/Nine.Identity.Application/Nine.Identity.Application.csproj" />
+    <Project Path="Sources/Identity/Nine.Identity.Domain.Contracts/Nine.Identity.Domain.Contracts.csproj" />
+    <Project Path="Sources/Identity/Nine.Identity.Domain.Tests/Nine.Identity.Domain.Tests.csproj" />
+    <Project Path="Sources/Identity/Nine.Identity.Domain/Nine.Identity.Domain.csproj" />
+    <Project Path="Sources/Identity/Nine.Identity.Infrastructure/Nine.Identity.Infrastructure.csproj" />
+    <Project Path="Sources/Identity/Nine.Identity.Presentation/Nine.Identity.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/Sources/Profiles/">
+    <Project Path="Sources/Profiles/Nine.Profiles.Application/Nine.Profiles.Application.csproj" />
+    <Project Path="Sources/Profiles/Nine.Profiles.Domain.Contracts/Nine.Profiles.Domain.Contracts.csproj" />
+    <Project Path="Sources/Profiles/Nine.Profiles.Domain.Tests/Nine.Profiles.Domain.Tests.csproj" />
+    <Project Path="Sources/Profiles/Nine.Profiles.Domain/Nine.Profiles.Domain.csproj" />
+    <Project Path="Sources/Profiles/Nine.Profiles.Infrastructure/Nine.Profiles.Infrastructure.csproj" />
+    <Project Path="Sources/Profiles/Nine.Profiles.Presentation/Nine.Profiles.Presentation.csproj" />
+  </Folder>
+  <Folder Name="/Sources/Shared/">
+    <Project Path="Sources/Shared/Nine.Shared.Application/Nine.Shared.Application.csproj" />
+    <Project Path="Sources/Shared/Nine.Shared.Domain/Nine.Shared.Domain.csproj" />
+    <Project Path="Sources/Shared/Nine.Shared.Infrastructure/Nine.Shared.Infrastructure.csproj" />
+    <Project Path="Sources/Shared/Nine.Shared.Presentation/Nine.Shared.Presentation.csproj" />
+  </Folder>
+</Solution>
