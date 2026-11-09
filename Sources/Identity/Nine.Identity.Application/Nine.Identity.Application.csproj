@@ -1,14 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net10.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
-
     <ItemGroup>
-      <ProjectReference Include="..\..\Shared\Nine.Shared.Application\Nine.Shared.Application.csproj" />
-      <ProjectReference Include="..\Nine.Identity.Domain\Nine.Identity.Domain.csproj" />
+        <ProjectReference Include="..\..\Shared\Nine.Shared.Application\Nine.Shared.Application.csproj"/>
+        <ProjectReference Include="..\Nine.Identity.Domain\Nine.Identity.Domain.csproj"/>
     </ItemGroup>
 
 </Project>
