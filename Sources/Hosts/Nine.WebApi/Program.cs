@@ -1,10 +1,12 @@
+using Nine.Identity.Domain.Users.Entities;
 using Nine.Profiles.Presentation.Profiles.WebApi.Endpoints;
 using Nine.WebApi.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddIdentity();
 builder.Services.AddMessaging();
+builder.Services.AddIdentity();
+builder.Services.AddProfiles();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
@@ -14,10 +16,15 @@ if (app.Environment.IsDevelopment())
     app.MapOpenApi();
 }
 
+await app.ApplyIdentityMigrationsAsync();
+await app.AddIdentityRolesAsync();
+
 app.UseExceptionHandler();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapIdentityApi<User>();
 app.MapProfilesWebApi();
 
 app.Run();
