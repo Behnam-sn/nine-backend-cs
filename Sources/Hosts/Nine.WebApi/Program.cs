@@ -7,13 +7,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddMessaging();
 builder.Services.AddIdentity();
 builder.Services.AddProfiles();
+
 builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseSwagger();
+    app.UseSwaggerUI();
 }
 
 await app.ApplyIdentityMigrationsAsync();
@@ -23,6 +28,8 @@ app.UseExceptionHandler();
 app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.MapSwagger().RequireAuthorization();
 
 app.MapIdentityApi<User>();
 app.MapProfilesWebApi();
