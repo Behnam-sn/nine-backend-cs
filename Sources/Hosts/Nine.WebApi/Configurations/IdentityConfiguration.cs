@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-
+using Nine.Identity.Domain.Contracts.Users.ValueObjects;
 using Nine.Identity.Domain.Users.Entities;
 using Nine.Identity.Infrastructure.DbContexts;
 
@@ -61,7 +61,7 @@ public static class IdentityConfiguration
     private static void AddPresentation(IServiceCollection services)
     {
         services.AddIdentityApiEndpoints<User>()
-            .AddRoles<IdentityRole<Guid>>()
+            .AddRoles<IdentityRole<UserId>>()
             .AddEntityFrameworkStores<ApplicationIdentityDbContext>();
     }
 }

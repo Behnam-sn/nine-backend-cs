@@ -1,7 +1,10 @@
+using System.ComponentModel;
+using Nine.Identity.Domain.Contracts.Users.Converters;
 using Nine.Identity.Domain.Contracts.Users.Exceptions;
 
 namespace Nine.Identity.Domain.Contracts.Users.ValueObjects;
 
+[TypeConverter(typeof(UserIdTypeConverter))]
 public readonly record struct UserId
 {
     private UserId(Guid value)
