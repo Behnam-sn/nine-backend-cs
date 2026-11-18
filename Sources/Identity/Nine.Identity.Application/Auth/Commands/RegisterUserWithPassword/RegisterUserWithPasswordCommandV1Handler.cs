@@ -5,7 +5,7 @@ using Nine.Identity.Domain.Users.UnitOfWorks;
 using Nine.Shared.Application.Abstractions.Messaging;
 using Nine.Shared.Domain;
 
-namespace Nine.Identity.Application.Users.Commands.RegisterUserWithPassword;
+namespace Nine.Identity.Application.Auth.Commands.RegisterUserWithPassword;
 
 public sealed class RegisterUserWithPasswordCommandV1Handler : ICommandHandler<RegisterUserWithPasswordCommandV1>
 {

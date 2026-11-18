@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing;
 
-using Nine.Identity.Application.Users.Commands.RegisterUserWithPassword;
+using Nine.Identity.Application.Auth.Commands.RegisterUserWithPassword;
 using Nine.Identity.Domain.Contracts.Users.ValueObjects;
 using Nine.Identity.Domain.Users.Entities;
 using Nine.Identity.Presentation.Users.Requests;
