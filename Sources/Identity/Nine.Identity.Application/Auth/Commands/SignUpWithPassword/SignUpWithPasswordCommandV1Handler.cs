@@ -5,20 +5,20 @@ using Nine.Identity.Domain.Users.UnitOfWorks;
 using Nine.Shared.Application.Abstractions.Messaging;
 using Nine.Shared.Domain;
 
-namespace Nine.Identity.Application.Auth.Commands.RegisterUserWithPassword;
+namespace Nine.Identity.Application.Auth.Commands.SignUpWithPassword;
 
-public sealed class RegisterUserWithPasswordCommandV1Handler : ICommandHandler<RegisterUserWithPasswordCommandV1>
+public sealed class SignUpWithPasswordCommandV1Handler : ICommandHandler<SignUpWithPasswordCommandV1>
 {
     private readonly IUnitOfWork _unitOfWork;
     private readonly UserManager<User> _userManager;
 
-    public RegisterUserWithPasswordCommandV1Handler(IUnitOfWork unitOfWork, UserManager<User> userManager)
+    public SignUpWithPasswordCommandV1Handler(IUnitOfWork unitOfWork, UserManager<User> userManager)
     {
         _unitOfWork = unitOfWork;
         _userManager = userManager;
     }
 
-    public async Task Handle(RegisterUserWithPasswordCommandV1 request, CancellationToken cancellationToken)
+    public async Task Handle(SignUpWithPasswordCommandV1 request, CancellationToken cancellationToken)
     {
         await _unitOfWork.BeginTransactionAsync();
         

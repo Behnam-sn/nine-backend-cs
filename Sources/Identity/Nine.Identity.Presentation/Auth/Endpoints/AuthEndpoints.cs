@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Routing;
 
-using Nine.Identity.Application.Auth.Commands.RegisterUserWithPassword;
+using Nine.Identity.Application.Auth.Commands.SignUpWithPassword;
 using Nine.Identity.Domain.Contracts.Users.ValueObjects;
 using Nine.Identity.Domain.Users.Entities;
 using Nine.Identity.Presentation.Auth.Requests;
@@ -15,14 +15,14 @@ public static class AuthEndpoints
 {
     public static IEndpointRouteBuilder MapAuthEndpoints(this IEndpointRouteBuilder endpoints)
     {
-        endpoints.MapPost("api/v1/Auth/Register", Register);
+        endpoints.MapPost("api/v1/Auth/SignUp", SignUp);
         endpoints.MapPost("api/v1/Auth/Login", Login);
         return endpoints;
     }
 
-    private static async Task Register(RegisterUserRequestV1 request, ICommandBus commandBus, CancellationToken cancellationToken)
+    private static async Task SignUp(SignUpRequestV1 request, ICommandBus commandBus, CancellationToken cancellationToken)
     {
-        var command = new RegisterUserWithPasswordCommandV1(
+        var command = new SignUpWithPasswordCommandV1(
             EmailAddress: EmailAddress.Create(request.Email),
             Password: PlainPassword.Create(request.Password)
         );
