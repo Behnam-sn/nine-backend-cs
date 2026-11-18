@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 
 using Nine.Identity.Application.Auth.Commands.SignUpWithPassword;
@@ -17,6 +18,7 @@ public static class AuthEndpoints
     {
         endpoints.MapPost("api/v1/Auth/SignUp", SignUp);
         endpoints.MapPost("api/v1/Auth/SignIn", SignIn);
+        endpoints.MapPost("api/v1/Auth/SignOut", SignOut).RequireAuthorization();;
         return endpoints;
     }
 
@@ -50,5 +52,15 @@ public static class AuthEndpoints
         }
 
         Results.Ok();
+    }
+    
+    private static async Task<IResult> SignOut([FromBody] object empty,SignInManager<User> signInManager, CancellationToken cancellationToken)
+    {
+        if (empty != null)
+        {
+            await signInManager.SignOutAsync();
+            return Results.Ok();
+        }
+        return Results.Unauthorized();
     }
 }
