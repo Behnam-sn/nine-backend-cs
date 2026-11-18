@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 using Nine.Identity.Domain.Contracts.Users.Exceptions;
 using Nine.Shared.Presentation.WebApi.ExceptionHandlers;
 
-namespace Nine.Identity.Presentation.Users.ExceptionHandlers;
+namespace Nine.Identity.Presentation.Auth.ExceptionHandlers;
 
 public sealed class AuthExceptionHandler : BaseExceptionHandler
 {

@@ -1,5 +1,5 @@
 using Nine.Identity.Domain.Users.Entities;
-using Nine.Identity.Presentation.Users.Endpoints;
+using Nine.Identity.Presentation.Auth.Endpoints;
 using Nine.Profiles.Presentation.Profiles.WebApi.Endpoints;
 using Nine.WebApi.Configurations;
 

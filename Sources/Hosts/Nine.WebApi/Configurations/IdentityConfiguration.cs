@@ -5,7 +5,7 @@ using Nine.Identity.Domain.Users.Entities;
 using Nine.Identity.Domain.Users.UnitOfWorks;
 using Nine.Identity.Infrastructure.DbContexts;
 using Nine.Identity.Infrastructure.UnitOfWorks;
-using Nine.Identity.Presentation.Users.ExceptionHandlers;
+using Nine.Identity.Presentation.Auth.ExceptionHandlers;
 
 namespace Nine.WebApi.Configurations;
 

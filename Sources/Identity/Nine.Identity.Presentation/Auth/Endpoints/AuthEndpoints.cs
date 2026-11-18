@@ -6,10 +6,10 @@ using Microsoft.AspNetCore.Routing;
 using Nine.Identity.Application.Auth.Commands.RegisterUserWithPassword;
 using Nine.Identity.Domain.Contracts.Users.ValueObjects;
 using Nine.Identity.Domain.Users.Entities;
-using Nine.Identity.Presentation.Users.Requests;
+using Nine.Identity.Presentation.Auth.Requests;
 using Nine.Shared.Application.Abstractions.Messaging;
 
-namespace Nine.Identity.Presentation.Users.Endpoints;
+namespace Nine.Identity.Presentation.Auth.Endpoints;
 
 public static class AuthEndpoints
 {
