@@ -7,11 +7,3 @@ public sealed class PasswordMissingUppercaseException : Exception
     {
     }
 }
-
-public sealed class PasswordHavingWhiteSpaceException : Exception
-{
-    public PasswordHavingWhiteSpaceException()
-        : base("Password must not contain any white space.")
-    {
-    }
-}

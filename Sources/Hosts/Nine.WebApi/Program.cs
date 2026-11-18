@@ -1,4 +1,5 @@
 using Nine.Identity.Domain.Users.Entities;
+using Nine.Identity.Presentation.Users.Endpoints;
 using Nine.Profiles.Presentation.Profiles.WebApi.Endpoints;
 using Nine.WebApi.Configurations;
 
@@ -32,6 +33,7 @@ app.UseAuthorization();
 app.MapSwagger().RequireAuthorization();
 
 app.MapIdentityApi<User>();
+app.MapAuthEndpoints();
 app.MapProfilesWebApi();
 
 app.Run();

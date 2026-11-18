@@ -2,7 +2,10 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Nine.Identity.Domain.Contracts.Users.ValueObjects;
 using Nine.Identity.Domain.Users.Entities;
+using Nine.Identity.Domain.Users.UnitOfWorks;
 using Nine.Identity.Infrastructure.DbContexts;
+using Nine.Identity.Infrastructure.UnitOfWorks;
+using Nine.Identity.Presentation.Users.ExceptionHandlers;
 
 namespace Nine.WebApi.Configurations;
 
@@ -56,10 +59,13 @@ public static class IdentityConfiguration
         });
 
         services.AddAuthorization();
+        
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 
     private static void AddPresentation(IServiceCollection services)
     {
+        services.AddExceptionHandler<AuthExceptionHandler>();
         services.AddIdentityApiEndpoints<User>()
             .AddRoles<IdentityRole<UserId>>()
             .AddEntityFrameworkStores<ApplicationIdentityDbContext>();
