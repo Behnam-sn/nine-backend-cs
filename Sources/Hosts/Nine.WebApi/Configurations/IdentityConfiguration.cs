@@ -19,26 +19,26 @@ public static class IdentityConfiguration
     public static async Task<WebApplication> ApplyIdentityMigrationsAsync(this WebApplication app)
     {
         using var scope = app.Services.CreateScope();
-        var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<Guid>>>();
-
-        if (!await roleManager.RoleExistsAsync("Admin"))
-        {
-            await roleManager.CreateAsync(new IdentityRole<Guid>("Admin") { Id = Guid.NewGuid() });
-        }
-
-        if (!await roleManager.RoleExistsAsync("Member"))
-        {
-            await roleManager.CreateAsync(new IdentityRole<Guid>("Member") { Id = Guid.NewGuid() });
-        }
-
+        var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationIdentityDbContext>();
+        await dbContext.Database.MigrateAsync();
         return app;
     }
 
     public static async Task<WebApplication> AddIdentityRolesAsync(this WebApplication app)
     {
         using var scope = app.Services.CreateScope();
-        var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationIdentityDbContext>();
-        await dbContext.Database.MigrateAsync();
+        var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole<UserId>>>();
+
+        if (!await roleManager.RoleExistsAsync("Admin"))
+        {
+            await roleManager.CreateAsync(new IdentityRole<UserId>("Admin") { Id = UserId.Create() });
+        }
+
+        if (!await roleManager.RoleExistsAsync("Member"))
+        {
+            await roleManager.CreateAsync(new IdentityRole<UserId>("Member") { Id = UserId.Create() });
+        }
+
         return app;
     }
 
