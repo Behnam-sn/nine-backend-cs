@@ -16,7 +16,7 @@ public static class AuthEndpoints
     public static IEndpointRouteBuilder MapAuthEndpoints(this IEndpointRouteBuilder endpoints)
     {
         endpoints.MapPost("api/v1/Auth/SignUp", SignUp);
-        endpoints.MapPost("api/v1/Auth/Login", Login);
+        endpoints.MapPost("api/v1/Auth/SignIn", SignIn);
         return endpoints;
     }
 
@@ -32,7 +32,7 @@ public static class AuthEndpoints
         Results.Ok();
     }
 
-    private static async Task Login(LoginRequestV1 request, SignInManager<User> signInManager, CancellationToken cancellationToken)
+    private static async Task SignIn(SignInRequestV1 request, SignInManager<User> signInManager, CancellationToken cancellationToken)
     {
         signInManager.AuthenticationScheme = IdentityConstants.ApplicationScheme;
         
