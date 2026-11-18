@@ -2,7 +2,7 @@
 
 using Nine.Shared.Application.Abstractions.Messaging;
 
-namespace Nine.Shared.Presentation.Common.WebApi.Controllers;
+namespace Nine.Shared.Presentation.WebApi.Controllers;
 
 [ApiController]
 [Route("api/v{version:apiVersion}/[controller]")]
